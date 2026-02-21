@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>shira · осень</title>
+    <title>shira · минимализм</title>
     <style>
         * {
             margin: 0;
@@ -22,7 +22,7 @@
         }
 
         .container {
-            max-width: 680px;
+            max-width: 560px;
             width: 100%;
         }
 
@@ -34,33 +34,45 @@
             box-shadow: 0 25px 40px -12px rgba(0, 0, 0, 0.8);
         }
 
-        /* Музыка */
-        .music {
-            background: #121212;
-            border-radius: 100px;
-            padding: 12px 20px;
-            margin-bottom: 40px;
+        /* ССЫЛКА НА ПЕСНЮ (YouTube) */
+        .music-link {
             display: inline-flex;
             align-items: center;
             gap: 12px;
+            background: #121212;
+            border-radius: 60px;
+            padding: 10px 20px 10px 16px;
+            margin-bottom: 40px;
             border: 1px solid #2a2a2a;
             color: #aaa;
+            text-decoration: none;
             font-size: 14px;
+            transition: 0.2s;
         }
 
-        .music span {
+        .music-link:hover {
+            border-color: #4a4a4a;
+            background: #181818;
+        }
+
+        .music-link span {
             color: #fff;
             font-weight: 500;
-            margin-left: 4px;
         }
 
-        .music::before {
-            content: "♫";
-            color: #888;
-            font-size: 18px;
+        .yt-icon {
+            width: 28px;
+            height: 28px;
+            background: #ff0000;
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            color: white;
+            font-size: 16px;
         }
 
-        /* Аватар */
+        /* АВАТАР */
         .avatar {
             width: 96px;
             height: 96px;
@@ -68,12 +80,11 @@
             background: #2c2c2c;
             margin-bottom: 28px;
             border: 2px solid #3a3a3a;
-            background-image: url('https://i.pravatar.cc/300?u=shira');
+            background-image: url('lain2.jpg');
             background-size: cover;
             background-position: center;
         }
 
-        /* Имя */
         h1 {
             color: #f0f0f0;
             font-size: 2.4rem;
@@ -82,8 +93,7 @@
             margin-bottom: 12px;
         }
 
-        /* Дискорд */
-        .discord {
+        .discord-row {
             color: #a0a0a0;
             font-size: 1rem;
             margin-bottom: 36px;
@@ -102,20 +112,6 @@
             border: 1px solid #333;
         }
 
-        /* Био */
-        .bio {
-            color: #b0b0b0;
-            font-size: 1rem;
-            line-height: 1.7;
-            margin-bottom: 40px;
-            max-width: 500px;
-        }
-
-        .bio p {
-            margin-bottom: 16px;
-        }
-
-        /* Ссылки */
         .links {
             display: flex;
             flex-direction: column;
@@ -155,16 +151,11 @@
             opacity: 0.7;
         }
 
-        .link-title {
-            font-size: 1rem;
-        }
-
         .link-arrow {
             color: #666;
             font-size: 1.2rem;
         }
 
-        /* Футер */
         .footer {
             margin-top: 48px;
             color: #3f3f3f;
@@ -172,7 +163,6 @@
             text-align: left;
             border-top: 1px solid #262626;
             padding-top: 28px;
-            letter-spacing: 0.3px;
         }
 
         .github-ref {
@@ -185,7 +175,6 @@
             color: #aaa;
         }
 
-        /* Адаптация */
         @media (max-width: 500px) {
             .card { padding: 32px 24px; }
             h1 { font-size: 2rem; }
@@ -196,37 +185,26 @@
 <body>
     <div class="container">
         <div class="card">
-            <!-- Песня -->
-            <div class="music">
+            <!-- ССЫЛКА НА ПЕСНЮ (YouTube) -->
+            <a href="https://www.youtube.com/watch?v=926-8dOb5eU" class="music-link" target="_blank">
+                <div class="yt-icon">▶</div>
                 сейчас играет · <span>Niki Istrefi — Chambers</span>
-            </div>
+            </a>
 
-            <!-- Аватар (пока заглушка, потом заменишь) -->
+            <!-- АВАТАР (ТВОЯ LAIN2.JPG) -->
             <div class="avatar"></div>
 
-            <!-- Имя -->
             <h1>shira</h1>
 
-            <!-- Дискорд -->
-            <div class="discord">
+            <!-- ДИСКОРД + ТЕЛЕГРАМ -->
+            <div class="discord-row">
                 <span class="discord-tag">ipw3b</span>
                 <span style="color:#5a5a5a;">/</span>
                 <span>@shiragod</span>
             </div>
 
-            <!-- Биография (коротко, без поеботы) -->
-            <div class="bio">
-                <p>
-                    занимаюсь тем, что мне нравится. иногда пишу код, иногда просто слушаю музыку.
-                </p>
-                <p style="color:#7a7a7a;">
-                    тут ничего лишнего.
-                </p>
-            </div>
-
-            <!-- Ссылки: телеграм, дискорд, гитхаб -->
+            <!-- ССЫЛКИ -->
             <div class="links">
-                <!-- Telegram -->
                 <a href="https://t.me/shiragod" class="link" target="_blank">
                     <div class="link-left">
                         <span class="link-icon">📱</span>
@@ -235,7 +213,6 @@
                     <span class="link-arrow">↗</span>
                 </a>
 
-                <!-- Discord -->
                 <a href="https://discord.com/users/ipw3b" class="link" target="_blank">
                     <div class="link-left">
                         <span class="link-icon">💬</span>
@@ -244,7 +221,6 @@
                     <span class="link-arrow">↗</span>
                 </a>
 
-                <!-- GitHub -->
                 <a href="https://github.com/notsh1raa" class="link" target="_blank">
                     <div class="link-left">
                         <span class="link-icon">⌨️</span>
@@ -254,17 +230,11 @@
                 </a>
             </div>
 
-            <!-- Футер с ссылкой на гитхаб -->
+            <!-- ФУТЕР -->
             <div class="footer">
                 <a href="https://github.com/notsh1raa" class="github-ref" target="_blank">github.com/notsh1raa</a>
             </div>
         </div>
     </div>
-
-    <!-- аудиоплеер (скрытый, автовоспроизведение может не работать в браузере) -->
-    <audio autoplay loop style="display:none">
-        <source src="https://docs.google.com/uc?export=download&id=1K7qX9qY9qY9qY9qY9qY9qY9qY9q" type="audio/mpeg">
-    </audio>
-    <!-- если трек не грузится, можно вставить ссылку на youtube/spotify позже -->
 </body>
 </html>
